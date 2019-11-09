@@ -12,7 +12,7 @@
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-location"></i>
-              <span>省市</span>
+              <span><router-link to="/ss">省市</router-link></span>
             </template>
             <el-menu-item-group>
               <el-menu-item index="1-1">台湾</el-menu-item>
@@ -32,7 +32,7 @@
           <el-submenu index="2">
             <template slot="title">
               <i class="el-icon-location"></i>
-              <span>美食</span>
+              <span><router-link to="/ms">美食</router-link></span>
             </template>
             <el-menu-item-group>
               <el-submenu index="1-1">

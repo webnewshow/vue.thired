@@ -3,15 +3,15 @@
     <Top/>
     <div class="clearfix" style="margin-top:5px">
     <Left/>
-    <Right/>
+    <router-view></router-view>
     </div>
    </div>
 </template>
 
 <script>
 import Top from './components/Top'
-// import Left from './components/Left'
-// import Right from './components/Right'
+import Left from './components/Left'
+import Right from './components/Right'
 export default {
   components: {
     Top,
