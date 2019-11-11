@@ -2,7 +2,7 @@
   <div class="left">
     <el-row class="tac">
       <el-col :span="12">
-        <h5>新闻</h5>
+        <h5>发现中国</h5>
         <el-menu
           default-active="2"
           class="el-menu-vertical-demo"
@@ -12,13 +12,19 @@
           <el-submenu index="1">
             <template slot="title">
               <i class="el-icon-location"></i>
-              <span><router-link to="/ss">省市</router-link></span>
+              <span>
+                <router-link to="/ss">省市</router-link>
+              </span>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="1-1">台湾</el-menu-item>
+              <el-menu-item index="1-1">
+                <router-link to="/ss/taiwan">台湾</router-link>
+              </el-menu-item>
               <el-menu-item index="1-2">香港</el-menu-item>
               <el-menu-item index="1-3">澳门</el-menu-item>
-              <el-menu-item index="1-4">北京</el-menu-item>
+              <el-menu-item index="1-4">
+                <router-link to="/ss/beijing">北京</router-link>
+              </el-menu-item>
               <el-submenu index="1-4">
                 <template slot="title">重庆</template>
                 <el-menu-item index="1-4-1">沙坪坝区</el-menu-item>
@@ -32,7 +38,9 @@
           <el-submenu index="2">
             <template slot="title">
               <i class="el-icon-location"></i>
-              <span><router-link to="/ms">美食</router-link></span>
+              <span>
+                <router-link to="/ms">美食</router-link>
+              </span>
             </template>
             <el-menu-item-group>
               <el-submenu index="1-1">
@@ -68,6 +76,7 @@
         </el-menu>
       </el-col>
     </el-row>
+    <div @click="changscount">点击了{{count}}</div>
   </div>
 </template>
 
@@ -79,7 +88,10 @@ export default {
     },
     handleClose(key, keyPath) {
       // console.log (key,keyPath)
-    }
+    },
+    changscount () {
+      this.$store.commit('changestate')
+    }    
   },
   // 书写JS
   mounted() {
@@ -87,10 +99,13 @@ export default {
       ".el-submenu__title[style='padding-left: 40px;']"
     );
     el.style.paddingLeft = "15px";
-    // 禁止同时划出
-    let ulIn = document.querySelector(".el-submenu");
-    if (ulIn.className.indexOf("is-opened") > -1) {
-      ulIn.parentNode.children[1].classList.remove("is-opened");
+
+
+    // 发送请求
+  },
+  computed:{
+    count() {
+      return this.$store.state.count
     }
   }
 };
@@ -116,5 +131,9 @@ h5 {
 }
 .el-menu-item-group.el-menu-item-group__title {
   padding: 0;
+}
+a {
+  text-decoration: none;
+  color: black;
 }
 </style>

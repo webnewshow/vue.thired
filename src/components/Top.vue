@@ -1,6 +1,6 @@
 <template>
   <div class="top">
-    CCTV News 央视网
+    大美中国
   </div>
 </template>
 
