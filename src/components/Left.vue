@@ -23,7 +23,7 @@
               <el-menu-item index="1-2">香港</el-menu-item>
               <el-menu-item index="1-3">澳门</el-menu-item>
               <el-menu-item index="1-4">
-                <router-link to="/ss/beijing">北京</router-link>
+                <router-link to="beijing">北京</router-link>
               </el-menu-item>
               <el-submenu index="1-4">
                 <template slot="title">重庆</template>

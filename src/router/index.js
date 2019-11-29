@@ -21,10 +21,9 @@ export default new Router({
       },
       children:[{
         path:'/ss/taiwan',
-        component:City
-      },{
-        path:'/ss/beijing',
-        component:City
+        components:{  
+          taiwan:City
+        }
       }]    
     },
     { 

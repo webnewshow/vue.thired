@@ -43,7 +43,7 @@
         </el-table>
       </template>
     </div>
-    <router-view></router-view>
+    <router-view name="taiwan"></router-view>
   </div>
 </template>
 
